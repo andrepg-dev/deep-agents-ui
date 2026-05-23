@@ -102,7 +102,6 @@ export function useChat({
   const setFiles = useCallback(
     async (files: Record<string, string>) => {
       if (!threadId) return;
-      // TODO: missing a way how to revalidate the internal state
       // I think we do want to have the ability to externally manage the state
       await client.threads.updateState(threadId, { values: { files } });
     },
